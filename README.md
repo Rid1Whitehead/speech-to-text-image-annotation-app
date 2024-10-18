@@ -20,19 +20,11 @@ This is a Flask-based web application for annotating images using speech recogni
 
 1. **Clone the Repository** 
 2. **Create a Virtual Environment (Optional but Recommended)**
-    
-    bash
-    
-    Copy code
-    
+        
     `` python -m venv venv source venv/bin/activate  # On Windows use `venv\Scripts\activate` ``
     
 3. **Install Dependencies**
-    
-    bash
-    
-    Copy code
-    
+       
     `pip install -r requirements.txt`
     
 
