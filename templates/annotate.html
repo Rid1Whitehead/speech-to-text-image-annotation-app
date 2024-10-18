@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Annotation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ image_url }}" alt="Image" id="image">
+        <form method="POST" id="annotation-form">
+            <div id="categories">
+                {% for category in categories %}
+                <label class="category-label">
+                    <input type="checkbox" name="categories" value="{{ category }}" id="category-{{ category|lower }}">
+                    {{ category }}
+                </label>
+                {% endfor %}
+            </div>
+            <button type="submit" id="next-image-button">Next Image</button>
+        </form>
+        <button id="mic-button">🎤</button>
+    </div>
+    <script>
+        var categories = [{% for category in categories %}'{{ category|lower }}'{% if not loop.last %},{% endif %}{% endfor %}];
+    </script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Annotation App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Annotation App</h1>
+        <form method="POST" action="{{ url_for('start') }}">
+            <div>
+                <label for="directory">Select Directory:</label>
+                <input type="text" id="directory" name="directory" required>
+            </div>
+            <div>
+                <label for="categories">Categories (comma-separated):</label>
+                <input type="text" id="categories" name="categories" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
